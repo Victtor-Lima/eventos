@@ -11,12 +11,10 @@ todosCursos.map((el) => {
 })
 
 btn.addEventListener('click', () => {
-    const selecionados = [...document.querySelectorAll('.destaque')]
-    selecionados.map((el) => {
-        caixa2.appendChild(el)
+    todosCursos.map((el) => {
+        el.classList.contains('destaque') == false? caixa1.appendChild(el) : caixa2.appendChild(el)
     })
 })
-
 
 
 
