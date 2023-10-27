@@ -3,22 +3,18 @@ const caixa2 = document.querySelector('#caixa2')
 const btn = document.querySelector('#btn_copiar')
 const todosCursos = [...document.querySelectorAll('.curso')]
 
-const selecionados = []
-
 todosCursos.map((el) => {
     el.addEventListener('click', (e) => {
         const curso = e.target
-        curso.classList.add('destaque')
-        if (selecionados.length <= todosCursos.length){
-            selecionados.push(curso)
-        }
+        curso.classList.toggle('destaque')
     })
 })
 
-
 btn.addEventListener('click', () => {
-    const copiar = [...selecionados]
-    caixa2.append(...copiar)
+    const selecionados = [...document.querySelectorAll('.destaque')]
+    selecionados.map((el) => {
+        caixa2.appendChild(el)
+    })
 })
 
 
