@@ -1,6 +1,6 @@
 const caixa1 = document.querySelector('#caixa1')
 const caixa2 = document.querySelector('#caixa2')
-const btn = document.querySelector('#btn_copiar')
+const btn_transferir = document.querySelector('#btn_transferir')
 const todosCursos = [...document.querySelectorAll('.curso')]
 
 todosCursos.map((el) => {
@@ -10,9 +10,10 @@ todosCursos.map((el) => {
     })
 })
 
-btn.addEventListener('click', () => {
+btn_transferir.addEventListener('click', () => {
     todosCursos.map((el) => {
         el.classList.contains('destaque') == false? caixa1.appendChild(el) : caixa2.appendChild(el)
+        console.log(el)
     })
 })
 
